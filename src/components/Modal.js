@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Modal = ({ selectedImg, setSelectedImg }) => {
   return (
-    <div className="backdrop" onClick={() => setSelectedImg(null)}>
+    <motion.div
+      className="backdrop"
+      onClick={() => setSelectedImg(null)}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <img src={selectedImg} alt="image enlarged" />
-    </div>
+    </motion.div>
   );
 };
 
